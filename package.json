@@ -1,0 +1,27 @@
+{
+  "name": "ecs-graphql-api",
+  "version": "1.0.0",
+  "description": "A Graphql API to List ECS Services Information.",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_PATH=. nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/glg-satish-tripathi/ecs-graphql-api.git"
+  },
+  "author": "Satish Tripathi",
+  "license": "Apache License 2.0",
+  "bugs": {
+    "url": "https://github.com/glg-satish-tripathi/ecs-graphql-api/issues"
+  },
+  "homepage": "https://github.com/glg-satish-tripathi/ecs-graphql-api#readme",
+  "type": "module",
+  "dependencies": {
+    "@aws-sdk/client-ecs": "^3.272.0",
+    "fastify": "^4.17.0",
+    "mercurius": "^13.0.0",
+    "mercurius-cache": "^4.0.0",
+    "winston": "^3.9.0"
+  }
+}

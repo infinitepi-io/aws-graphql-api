@@ -1,0 +1,21 @@
+query getService($serviceNames: String!, $clusterName: String!){
+  gdsServicesInfo(serviceNames: $serviceNames, clusterName: $clusterName){
+    capacityProviderStrategy{
+      base
+      weight
+    }
+    clusterArn
+    serviceArn
+    loadBalancers{
+      targetGroupArn
+      containerName
+      containerPort
+    }
+  }
+}
+
+#Query Variables:
+{
+  "serviceNames": "my-service-1,my-service-2",
+  "clusterName": "my-cluster"
+}
