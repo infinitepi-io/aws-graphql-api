@@ -1,5 +1,8 @@
 name: graphql-inspector
-on: [push]
+on: 
+  push: 
+    paths:
+      - "src/graphql/schema/ecs-service-schema.graphql"
 
 permissions:
   contents: read 
