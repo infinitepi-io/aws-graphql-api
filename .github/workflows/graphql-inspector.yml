@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@master
+      - name: Checkout Code
+        uses: actions/checkout@v2
 
       - uses: kamilkisiela/graphql-inspector@master
         with:
