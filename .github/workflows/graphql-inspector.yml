@@ -1,4 +1,4 @@
-name: Validate Graphql Schema Changes
+name: graphql-inspector
 on: [push]
 
 permissions:

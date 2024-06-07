@@ -1,5 +1,7 @@
 # aws-graphql-api
 
+![CI workflow](https://github.com/mercurius-js/mercurius/workflows/CI%20workflow/badge.svg)
+
 This is a[ GraphQL](https://graphql.org/) API designed to retrieve service information by querying the cluster name, service name, and the region where the cluster is deployed. The long-term plan for this API is to expand its capabilities to interact with various AWS resources.
 
 ## Docs
