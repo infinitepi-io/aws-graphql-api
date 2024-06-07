@@ -79,12 +79,12 @@ More query examples will be added [here]([https://infinitepi-io.github.io/](http
 
 ## Contributing
 
-Link to your `CONTRIBUTING.md` here. If you don't have one, you can use this:
+follow the guideline [here](https://github.com/infinitePi-io/ecs-graphql-api/blob/development/CONTRIBUTING.md)
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ## License
 
-Apache License 2.0
+[Apache License 2.0](https://github.com/infinitePi-io/ecs-graphql-api/blob/development/LICENSE)
 
 ## Contact
