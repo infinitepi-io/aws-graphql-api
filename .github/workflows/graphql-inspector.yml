@@ -1,10 +1,11 @@
-name: CI
- 
+name: Validate Graphql Schema Changes
+# Graphql Inspector was suggested by the graphql community to check if any breaking changes introduced in the Graphql API.
+# https://the-guild.dev/graphql/inspector/docs/products/action
 on: [push]
  
 jobs:
   test:
-    name: Check Schema
+    name: Validate Schema
     runs-on: ubuntu-latest
  
     steps:
@@ -13,4 +14,4 @@ jobs:
  
       - uses: kamilkisiela/graphql-inspector@master
         with:
-          schema: 'master:schema.graphql'
+          schema: 'main:src/graphql/schema/ecs-service-schema.graphql'
