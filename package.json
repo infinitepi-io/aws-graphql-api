@@ -4,24 +4,37 @@
   "description": "A Graphql API to List ECS Services Information.",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_PATH=. nodemon src/index.js"
+    "test": "mocha --recursive",
+    "start": "node src/index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/glg-satish-tripathi/ecs-graphql-api.git"
+    "url": "git+git@github.com:infinitePi-io/ecs-graphql-api.git"
   },
   "author": "Satish Tripathi",
   "license": "Apache License 2.0",
   "bugs": {
-    "url": "https://github.com/glg-satish-tripathi/ecs-graphql-api/issues"
+    "url": "https://github.com/infinitePi-io/ecs-graphql-api/issues"
   },
-  "homepage": "https://github.com/glg-satish-tripathi/ecs-graphql-api#readme",
-  "type": "module",
+  "homepage": "https://github.com/infinitePi-io/ecs-graphql-api/blob/main/README.md",
   "dependencies": {
     "@aws-sdk/client-ecs": "^3.272.0",
     "fastify": "^4.17.0",
-    "mercurius": "^13.0.0",
-    "mercurius-cache": "^4.0.0",
+    "mercurius": "^13.2.2",
+    "@graphql-tools/graphql-file-loader": "^8.0.0",
+    "@graphql-tools/load": "^8.0.0",
+    "@graphql-tools/mock": "^9.0.0",
+    "@graphql-tools/schema": "^10.0.0",
+    "graphql": "^16.7.1",
     "winston": "^3.9.0"
+  },
+  "devDependencies": {
+    "aws-sdk-client-mock": "^4.0.1",
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0",
+    "sinon": "^14.0.0",
+    "supertest": "^6.2.3",
+    "chai-as-promised": "^7.1.1",
+    "sinon-chai": "^3.7.0"
   }
 }

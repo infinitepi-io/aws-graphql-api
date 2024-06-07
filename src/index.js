@@ -1,44 +1,28 @@
-import Fastify from 'fastify'
-import mercurius from 'mercurius'
-import { createLogger } from './lib/logger.js'
-import {schema} from './lib/schema.js'
-import {getdescribedService} from './lib/aws.js'
-
-const fastify = Fastify()
+const fastify = require('fastify')({
+  logger: false
+})
+const logger = require('./lib/logger')
+const mercurius = require('mercurius')
+const { loadSchemaSync } = require('@graphql-tools/load')
+const { GraphQLFileLoader } = require('@graphql-tools/graphql-file-loader')
+const { join } = require('path')
+const schemaPath = join(__dirname, 'graphql/schema/ecs-service-schema.graphql')
+const schema = loadSchemaSync(schemaPath, {
+  loaders: [new GraphQLFileLoader()]
+})
 const port = 3000
-let logger = createLogger()
 
-
-// Resolvers Defination!
-const resolvers = {
-  Query: {
-    getServicesInfo: async (_, { serviceNames, clusterName, region }) => {
-      let service
-      if(serviceNames.length != 0){
-        service = await getdescribedService(serviceNames, clusterName, region)
-      } else {
-        logger.error('The ECS Service name can not be empty!')
-        throw new Error('serviceNameEmpty')
-      }
-      if (Array.isArray(service)) {
-        return service
-      }
-    }
-  }
-}
-
-// https://www.npmjs.com/package/mercurius
+const { resolvers } = require('./graphql/resolvers/ecs-service-resolvers')
 fastify.register(mercurius, {
   schema,
   resolvers,
   graphiql: true
 })
 
-fastify.listen({ port }, (err) => {
-  logger.info(`ECS Graphql API listening on port ${port}!`)
+fastify.listen({ port }, (err, address) => {
   if (err) {
-    logger = createLogger('error')
-    logger.error({ error: err.message })
-    throw err
+    logger.error(err)
+    process.exit(1)
   }
+  logger.info(`server listening on ${address}`)
 })
