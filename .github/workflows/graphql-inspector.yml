@@ -1,16 +1,16 @@
 name: CI
-
+ 
 on: [push]
-
+ 
 jobs:
   test:
-    name: Validate Schema
+    name: Check Schema
     runs-on: ubuntu-latest
-
+ 
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2
-
+      - name: Checkout
+        uses: actions/checkout@master
+ 
       - uses: kamilkisiela/graphql-inspector@master
         with:
-          schema: 'main:ecs-service-schema.graphql'
+          schema: 'master:schema.graphql'
