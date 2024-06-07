@@ -1,13 +1,14 @@
 name: Validate Graphql Schema Changes
 on: [push]
 
-permissions:
-  contents: read
-
 jobs:
   graphql-inspector:
     name: Validate Schema
     runs-on: ubuntu-latest
+    permissions: 
+      contents: write
+      pull-requests: write
+      repository-projects: write
  
     steps:
       - name: Checkout
