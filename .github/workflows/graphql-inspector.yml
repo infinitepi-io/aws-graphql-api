@@ -5,7 +5,7 @@ permissions:
   contents: read
 
 jobs:
-  test:
+  graphql-inspector:
     name: Validate Schema
     runs-on: ubuntu-latest
  
@@ -16,4 +16,3 @@ jobs:
       - uses: kamilkisiela/graphql-inspector@master
         with:
           schema: 'main:src/graphql/schema/ecs-service-schema.graphql'
-          github-token: ${{ secrets.GITHUB_TOKEN }}
