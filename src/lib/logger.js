@@ -1,9 +1,10 @@
-import winston from 'winston'
+const winston = require('winston')
+const logLevel = process.env.LOG_LEVEL || 'info'
 
-export function createLogger () {
-  return winston.createLogger({
-    format: winston.format.json(),
-    defaultMeta: { service: 'ecs-graphql-api' },
-    transports: [new winston.transports.Console()]
-  })
-}
+const log = winston.createLogger({
+  level: logLevel,
+  format: winston.format.json(),
+  transports: [new winston.transports.Console()]
+})
+
+module.exports = log

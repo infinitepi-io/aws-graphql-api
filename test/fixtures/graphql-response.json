@@ -1,0 +1,43 @@
+{
+    "response": [
+      {
+        "clusterArn": "arn:aws:ecs:us-east-1:xxxxxxxxx:cluster/v8-x58",
+        "clusterName": "v8-x58",
+        "serviceArn": "arn:aws:ecs:us-east-1:xxxxxxxxx:service/v8-x58/v8-x58_graphql-api",
+        "serviceName": "v8-x58_graphql-api",
+        "createdAt":"2023-08-12T05:17:42.273Z",
+        "capacityProviderStrategy": [
+          {
+            "base": 0,
+            "weight": 100,
+            "capacityProvider": "capacity-provider-v8-x58"
+          }
+        ],
+        "loadBalancers": [
+          {
+            "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:xxxxxxxxx:targetgroup/echo562a/bc489829d93c3a51",
+            "containerName": "echo-nginx",
+            "containerPort": 80
+          }
+        ],
+        "events": [
+          {
+            "id": "7825844d-de69-413f-88fe-e87c0e55a5a1",
+            "createdAt": "2023-08-12T05:17:42.273Z",
+            "message": "(service v8-x58_graphql-api) has reached a steady state."
+          }
+        ],
+        "desiredCount": 2,
+        "enableECSManagedTags": false,
+        "enableExecuteCommand": false,
+        "healthCheckGracePeriodSeconds": 0,
+        "pendingCount": 0,
+        "propagateTags": "NONE",
+        "roleArn": "arn:aws:iam::xxxxxxxxx:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+        "runningCount": 2,
+        "schedulingStrategy": "REPLICA",
+        "status": "ACTIVE",
+        "taskDefinition": "arn:aws:ecs:us-east-1:xxxxxxxxx:task-definition/v8-x58_graphql-api:7"
+      }
+    ]
+  }
