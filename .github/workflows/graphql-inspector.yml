@@ -16,5 +16,5 @@ jobs:
  
       - uses: kamilkisiela/graphql-inspector@master
         with:
-          schema: 'main:src/graphql/schema/ecs-service-schema.graphql'
+          schema: 'main:ecs-service-schema.graphql'
           # github_token: ${{ secrets.PAT_TOKEN }}
