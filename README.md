@@ -79,7 +79,7 @@ More query examples will be added [here]([https://infinitepi-io.github.io/](http
 
 ## Contributing
 
-follow the guideline [here](https://github.com/infinitePi-io/ecs-graphql-api/blob/development/CONTRIBUTING.md)
+Please follow the guideline [here](https://github.com/infinitePi-io/ecs-graphql-api/blob/development/CONTRIBUTING.md)
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
