@@ -23,11 +23,11 @@ Pull requests are the best way to propose changes to the codebase. We actively w
 5. Make sure your code lints.
 6. Issue that pull request!
 
-## Any contributions you make will be under the MIT Software License
+## Any contributions you make will be under the Apache License 2.0 Software License
 
 In short, when you submit code changes, your submissions are understood to be under the same Apache License 2.0 that covers the project. Feel free to contact the maintainers if that's a concern.
 
-## Report bugs using Github's [issues](https://github.com/briandk/transcriptase-atom/issues)
+## Report bugs using Github's [issues](https://github.com/infinitePi-io/aws-graphql-api/issues)
 
 We use GitHub issues to track public bugs. Report a bug by [opening a new issue](https://github.com/infinitePi-io/ecs-graphql-api/issues); it's that easy!
 
