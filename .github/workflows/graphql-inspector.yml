@@ -3,7 +3,7 @@ name: Validate Graphql Schema Changes
 # https://the-guild.dev/graphql/inspector/docs/products/action
 on: [push]
 permissions:
-  contents: read
+  contents: write
   pull-requests: write
 jobs:
   test:
