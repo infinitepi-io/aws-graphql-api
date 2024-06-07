@@ -6,6 +6,9 @@ permissions:
   contents: write    # This is required for actions/checkout
   pull-requests: write
   actions: write
+  deployments: write
+  issues: write
+  repository-projects: write
 
 
 jobs:
