@@ -1,0 +1,34 @@
+name: Unit Tests
+on: 
+  push:
+    paths:
+      - 'src/**'
+      - '!**.md'
+env:
+  NPM_REGISTRY_URL: npm.pkg.github.com
+  NPM_TOKEN: ${{ secrets.NODE_PACKAGE_REGISTRY_READ_TOKEN }}
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: "actions/checkout@v4"
+      - uses: "actions/setup-node@v4"
+        with:
+          node-version: "20"
+      - name: run tests
+        run: |
+          SRCS_HAVE_TEST_FOLDER="$(find src -type d -regex 'src/[^/]*/test')"
+          if [[ -z SRCS_HAVE_TEST_FOLDER ]]; then
+            echo "no test folder detected in the src folder."
+            exit 0
+          fi
+          for SRC_HAS_TEST_FOLDER in $SRCS_HAVE_TEST_FOLDER
+          do
+            pushd "${SRC_HAS_TEST_FOLDER%/test}"
+            if jq '.scripts | has("test")' package.json; then
+              npm clean-install
+              npm run test
+              popd
+            fi
+          done
