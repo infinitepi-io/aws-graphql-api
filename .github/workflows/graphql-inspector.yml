@@ -9,6 +9,7 @@ permissions:
   deployments: write
   issues: write
   repository-projects: write
+  checks: write
 
 
 jobs:
