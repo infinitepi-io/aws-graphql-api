@@ -33,6 +33,10 @@ directive @deprecated(
 ) on FIELD_DEFINITION | ENUM_VALUE | ARGUMENT_DEFINITION | INPUT_FIELD_DEFINITION
 
 # Graphql Schema.
+type capacityProviderStrategy {
+  base: Int @deprecated(reason: "This field is deprecated.")
+  capacityProvider: String! @deprecated(reason: "This field is deprecated.")
+}
 type loadBalancerInfo {
   targetGroupArn: String!
   containerName: String!
