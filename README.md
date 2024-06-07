@@ -1,5 +1,7 @@
 # aws-graphql-api
 
+![unit-test](https://github.com/infinitePi-io/aws-graphql-api/actions/workflows/unit-test.yml/badge.svg)
+
 ![Validate Schema](https://github.com/infinitePi-io/aws-graphql-api/actions/workflows/graphql-inspector.yml/badge.svg)
 
 This is a[ GraphQL](https://graphql.org/) API designed to retrieve service information by querying the cluster name, service name, and the region where the cluster is deployed. The long-term plan for this API is to expand its capabilities to interact with various AWS resources.
