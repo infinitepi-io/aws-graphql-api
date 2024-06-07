@@ -73,7 +73,7 @@ query getService($serviceNames: String!, $clusterName: String!, $clusterDeployed
 
 The AWS SDK and CLI have certain limitations when it comes to retrieving service information. For instance, the [describe-services](vscode-file://vscode-app/Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/code/electron-sandbox/workbench/workbench.html "https://docs.aws.amazon.com/cli/latest/reference/ecs/describe-services.html") command can only handle up to 10 services at a time. However, this API overcomes that limitation, allowing you to query information for as many services as you need in a single request. This makes it a more efficient and flexible tool for managing large-scale AWS environments.
 
-More query examples will be added [here]([https://infinitepi-io.github.io/](https://github.com/your_username/repo_name)).
+More query examples will be added here.
 
 ## Acknowledgements
 
@@ -81,12 +81,12 @@ More query examples will be added [here]([https://infinitepi-io.github.io/](http
 
 ## Contributing
 
-Please follow the guideline [here](https://github.com/infinitePi-io/ecs-graphql-api/blob/development/CONTRIBUTING.md)
+Please follow the guideline [here](https://github.com/infinitePi-io/ecs-graphql-api/blob/main/CONTRIBUTING.md)
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ## License
 
-[Apache License 2.0](https://github.com/infinitePi-io/ecs-graphql-api/blob/development/LICENSE)
+[Apache License 2.0](https://github.com/infinitePi-io/ecs-graphql-api/blob/main/LICENSE)
 
 ## Contact
