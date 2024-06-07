@@ -92,3 +92,5 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 [Apache License 2.0](https://github.com/infinitePi-io/ecs-graphql-api/blob/main/LICENSE)
 
 ## Contact
+[![text](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/satish-tripathi-91568b112/)
+
