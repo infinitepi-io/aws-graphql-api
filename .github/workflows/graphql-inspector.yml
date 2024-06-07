@@ -1,15 +1,14 @@
 name: Validate Graphql Schema Changes
 on: [push]
 
+permissions:
+  id-token: write   # This is required for requesting the JWT
+  contents: read    # This is required for actions/checkout
+
 jobs:
   graphql-inspector:
     name: Validate Schema
     runs-on: ubuntu-latest
-    permissions: 
-      id-token: write
-      contents: write
-      pull-requests: write
-      repository-projects: write
  
     steps:
       - name: Checkout
@@ -18,4 +17,3 @@ jobs:
       - uses: kamilkisiela/graphql-inspector@master
         with:
           schema: 'main:ecs-service-schema.graphql'
-          # github_token: ${{ secrets.PAT_TOKEN }}
