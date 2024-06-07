@@ -13,4 +13,4 @@ jobs:
 
       - uses: kamilkisiela/graphql-inspector@master
         with:
-          schema: 'main:src/graphql/ecs-service-schema.graphql'
+          schema: 'main:ecs-service-schema.graphql'
