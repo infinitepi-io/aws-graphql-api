@@ -26,3 +26,5 @@ fastify.listen({ port }, (err, address) => {
   }
   logger.info(`server listening on ${address}`)
 })
+
+
