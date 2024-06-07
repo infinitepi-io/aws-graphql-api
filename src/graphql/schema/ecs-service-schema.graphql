@@ -34,9 +34,9 @@ directive @deprecated(
 
 # Graphql Schema.
 type capacityProviderStrategy {
-  base: Int
-  capacityProvider: String!
-  weight: Int
+  base: Int @deprecated(reason: "This field is deprecated.")
+  capacityProvider: String! @deprecated(reason: "This field is deprecated.")
+  weight: Int @deprecated(reason: "This field is deprecated.")
 }
 type loadBalancerInfo {
   targetGroupArn: String!
