@@ -5,10 +5,10 @@ permissions:
   id-token: write   # This is required for requesting the JWT
   contents: write    # This is required for actions/checkout
   pull-requests: write
-  actions: write
-  deployments: write
-  issues: write
-  repository-projects: write
+  # actions: write
+  # deployments: write
+  # issues: write
+  # repository-projects: write
   checks: write
 
 
@@ -23,4 +23,4 @@ jobs:
  
       - uses: kamilkisiela/graphql-inspector@master
         with:
-          schema: 'main:ecs-service-schema.graphql'
+          schema: 'main:src/graphql/schema/ecs-service-schema.graphql'
