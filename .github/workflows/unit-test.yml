@@ -18,14 +18,14 @@ jobs:
           node-version: "20"
       - name: run tests
         run: |
-          SRCS_HAVE_TEST_FOLDER="$(find src -type d -regex 'src/[^/]*/test')"
-          if [[ -z SRCS_HAVE_TEST_FOLDER ]]; then
+          TEST_FOLDER="$(find . -type d -maxdepth 1 -name 'test')"
+          if [[ -z TEST_FOLDER ]]; then
             echo "no test folder detected in the src folder."
             exit 0
           fi
-          for SRC_HAS_TEST_FOLDER in $SRCS_HAVE_TEST_FOLDER
+          for HAS_TEST_FOLDER in $TEST_FOLDER
           do
-            pushd "${SRC_HAS_TEST_FOLDER%/test}"
+            pushd "${HAS_TEST_FOLDER%/test}"
             if jq '.scripts | has("test")' package.json; then
               npm clean-install
               npm run test
