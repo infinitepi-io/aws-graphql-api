@@ -42,6 +42,7 @@ API Endpoint:
 ```bash
 localhost:3000/graphql
 ```
+![localhost](image.png)
 
 ## Running the tests
 
