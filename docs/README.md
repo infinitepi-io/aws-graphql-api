@@ -80,7 +80,7 @@ More query examples will be added here.
 
 ## Acknowledgements
 
-[David Dai ](https://github.com/ddai1)and [Phil Hadviger](https://github.com/datfinesoul) have significantly contributed to the development of this API with their valuable suggestions and improvements.
+[Phil Hadviger](https://github.com/datfinesoul) have significantly contributed to the development of this API with their valuable suggestions and improvements.
 
 ## Contributing
 
