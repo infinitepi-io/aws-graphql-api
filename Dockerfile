@@ -3,10 +3,12 @@ FROM node:20-slim AS builder
 # Create app directory
 WORKDIR /usr/src/app
 # Install app dependencies
+RUN npm install --global corepack@latest && \
+    corepack use pnpm@latest-10
 # Copy package files first to leverage Docker cache
-COPY * ./
+COPY package.json pnpm-lock.yaml ./
 # Install dependencies including devDependencies
-RUN npm install
+RUN pnpm install
 # Copy source code
 COPY . .
 # Create a non-root user

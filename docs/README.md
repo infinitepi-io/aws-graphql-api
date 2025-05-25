@@ -6,27 +6,83 @@
 
 This is a[ GraphQL](https://graphql.org/) API designed to retrieve service information by querying the cluster name, service name, and the region where the cluster is deployed. The long-term plan for this API is to expand its capabilities to interact with various AWS resources.
 
+## Features
+
+- 🚀 GraphQL API for AWS ECS service discovery
+- 📊 Batch querying of multiple services in a single request
+- 🌐 Support for multiple AWS regions
+- 🔍 Detailed service information including:
+  - Cluster ARN
+  - Load balancer configurations
+  - Container details
+  - Service status
+- ⚡ High performance with connection pooling
+- 🔒 Secure with AWS IAM authentication
+- 🐳 Docker support for easy deployment
+- 🧪 Comprehensive test coverage
+
+## Key Benefits
+
+- **No Service Limits**: Unlike AWS CLI's [`describe-services`](https://docs.aws.amazon.com/cli/latest/reference/ecs/describe-services.html) which is limited to 10 services per request, this API can handle unlimited services in a single query
+- **GraphQL Flexibility**: Query only the fields you need, reducing response payload size
+- **Developer Friendly**: Interactive GraphiQL playground for API exploration
+- **Container Ready**: Easy deployment with Docker and provided Makefile
+
 ## Docs
 
+- [Features](#features)
+- [Key Benefits](#key-benefits)
+- [Prerequisites](#prerequisites)
 - [Install](#install)
 - [Quick Start](#quick-start)
-- [Running the tests](running-the-tests)
+- [Running the tests](#running-the-tests)
 - [Examples](#examples)
+- [Contributing](#contributing)
 - [Acknowledgements](#acknowledgements)
 - [License](#license)
+- [Contact](#contact)
 
 ## Getting Started
 
+### Prerequisites
+
+- Node.js >= 20.9.0
+- pnpm >= 10.11.0
+- Docker (optional, for containerized deployment)
+
 ### Install
 
-```bash
-npm install
+Using pnpm (recommended):
+```zsh
+# Install pnpm if you haven't already
+corepack enable
+corepack prepare pnpm@latest --activate
+
+# Install dependencies
+pnpm install
 ```
 
 ### Quick Start
 
-```bash
-npm start
+#### Local Development
+```zsh
+# Start the server locally
+pnpm start
+```
+
+#### Using Docker
+```zsh
+# Build and start the container
+make up
+
+# Check logs
+make logs
+
+# Test if the API is running
+make test-api
+
+# Stop the container
+make down
 ```
 
 Server will be running on:
@@ -46,8 +102,15 @@ localhost:3000/graphql
 
 ## Running the tests
 
-```bash
-npm test
+Using pnpm:
+```zsh
+pnpm test
+```
+
+Using Docker:
+```zsh
+# Run tests in container
+make test
 ```
 
 ## Examples
