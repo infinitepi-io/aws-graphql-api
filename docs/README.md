@@ -55,8 +55,8 @@ This is a[ GraphQL](https://graphql.org/) API designed to retrieve service infor
 Using pnpm (recommended):
 ```zsh
 # Install pnpm if you haven't already
-corepack enable
-corepack prepare pnpm@latest --activate
+npm install --global corepack@latest
+corepack use pnpm@latest-10
 
 # Install dependencies
 pnpm install
