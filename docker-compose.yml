@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder # Use builder stage for development
+    image: aws-graphql-api
+    container_name: aws-graphql-api
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - AWS_REGION=${AWS_REGION:-us-east-1}
+      # AWS credentials can be passed via environment variables
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      # Optional AWS session token
+      - AWS_SESSION_TOKEN=${AWS_SESSION_TOKEN}
+    volumes:
+      # Mount source code for development
+      - ./src:/usr/src/app/src
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/graphiql"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
+
+  # Add development tools service (optional)
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder
+    image: aws-graphql-api-dev
+    container_name: aws-graphql-api-dev
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules # Preserve node_modules in container
+    command: npm run test
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - api

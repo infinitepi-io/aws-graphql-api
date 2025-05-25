@@ -19,7 +19,10 @@ fastify.register(mercurius, {
   graphiql: true
 })
 
-fastify.listen({ port }, (err, address) => {
+fastify.listen({ 
+  port: port,
+  host: '0.0.0.0'
+}, (err, address) => {
   if (err) {
     logger.error(err)
     process.exit(1)
