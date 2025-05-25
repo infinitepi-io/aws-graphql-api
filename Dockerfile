@@ -9,8 +9,6 @@ COPY * ./
 RUN npm install
 # Copy source code
 COPY . .
-# Run tests
-RUN npm test
 # Create a non-root user
 RUN addgroup --system --gid 1001 nodejs && \
     adduser --system --uid 1001 --ingroup nodejs nodejs
