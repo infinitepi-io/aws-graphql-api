@@ -19,6 +19,22 @@ fastify.register(mercurius, {
   graphiql: true
 })
 
+// Graceful shutdown handling
+const closeGracefully = async (signal) => {
+  try {
+    await fastify.close()
+    logger.info('Server closed successfully')
+    process.exit(0)
+  } catch (err) {
+    logger.error('Error during shutdown:', err)
+    process.exit(1)
+  }
+}
+
+// Listen for shutdown signals
+process.on('SIGTERM', () => closeGracefully('SIGTERM'))
+process.on('SIGINT', () => closeGracefully('SIGINT'))
+
 fastify.listen({ 
   port: port,
   host: '0.0.0.0'
