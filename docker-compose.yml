@@ -5,9 +5,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      target: builder # Use builder stage for development
     image: aws-graphql-api
     container_name: aws-graphql-api
+    stop_grace_period: 30s
+    stop_signal: SIGINT
     ports:
       - "3000:3000"
     environment:
@@ -16,7 +17,6 @@ services:
       # AWS credentials can be passed via environment variables
       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
-      # Optional AWS session token
       - AWS_SESSION_TOKEN=${AWS_SESSION_TOKEN}
     volumes:
       # Mount source code for development
@@ -28,18 +28,16 @@ services:
       retries: 3
       start_period: 10s
     restart: unless-stopped
-
-  # Add development tools service (optional)
   dev:
     build:
       context: .
       dockerfile: Dockerfile
-      target: builder
+      target: run-graphql-api
     image: aws-graphql-api-dev
     container_name: aws-graphql-api-dev
     volumes:
       - .:/usr/src/app
-      - /usr/src/app/node_modules # Preserve node_modules in container
+      - /usr/src/app/node_modules
     command: npm run test
     environment:
       - NODE_ENV=development
