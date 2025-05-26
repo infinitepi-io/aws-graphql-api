@@ -30,8 +30,6 @@ const closeGracefully = async (signal) => {
     process.exit(1)
   }
 }
-
-// Listen for shutdown signals
 process.on('SIGTERM', () => closeGracefully('SIGTERM'))
 process.on('SIGINT', () => closeGracefully('SIGINT'))
 
