@@ -36,7 +36,7 @@
     "aws-sdk-client-mock": "^4.0.1",
     "chai": "^4.3.10",
     "chai-as-promised": "^7.1.1",
-    "glob": "^10.3.10",
+    "glob": "^11.1.0",
     "mocha": "^10.3.0",
     "sinon": "^20.0.0",
     "sinon-chai": "^3.7.0",
