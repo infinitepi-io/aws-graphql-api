@@ -27,7 +27,7 @@
     "@graphql-tools/load": "^8.0.1",
     "@graphql-tools/mock": "^9.0.1",
     "@graphql-tools/schema": "^10.0.2",
-    "fastify": "^5.7.3",
+    "fastify": "^5.8.5",
     "graphql": "^16.8.1",
     "mercurius": "^16.1.0",
     "winston": "^3.12.0"
